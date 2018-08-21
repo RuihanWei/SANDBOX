@@ -53,14 +53,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent event) {
         Sensor sensor = event.sensor;
         if (sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            xAcc.setText(""+ event.values[0]);
-            yAcc.setText(""+  event.values[1]);
-            zAcc.setText(""+  event.values[2]);
+            xAcc.setText(""+ (double)Math.round(event.values[0] * 100d) / 100d);
+            yAcc.setText(""+ (double)Math.round(event.values[0] * 100d) / 100d);
+            zAcc.setText(""+ (double)Math.round(event.values[0] * 100d) / 100d);
         }
         else if (sensor.getType() == Sensor.TYPE_GYROSCOPE) {
-            xGyro.setText(""+ event.values[0]);
-            yGyro.setText(""+ event.values[1]);
-            zGyro.setText(""+ event.values[2]);
+            xGyro.setText(""+ (double)Math.round(event.values[0] * 100d) / 100d);
+            yGyro.setText(""+ (double)Math.round(event.values[1] * 100d) / 100d);
+            zGyro.setText(""+ (double)Math.round(event.values[2] * 100d) / 100d);
         }
         else{
             xAcc.setText("wtf");

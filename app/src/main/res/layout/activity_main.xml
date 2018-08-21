@@ -35,9 +35,10 @@
         android:id="@+id/yGyro"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="78dp"
+        android:layout_marginTop="80dp"
         android:text="null"
         app:layout_constraintEnd_toEndOf="@+id/zGyro"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/zGyro"
         app:layout_constraintTop_toBottomOf="@+id/xGyro" />
 
@@ -45,9 +46,9 @@
         android:id="@+id/zGyro"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginRight="67dp"
-        android:layout_marginTop="79dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
+        android:layout_marginTop="80dp"
         android:text="null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yGyro" />
@@ -56,9 +57,10 @@
         android:id="@+id/xGyro"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="72dp"
         android:text="null"
         app:layout_constraintEnd_toEndOf="@+id/yGyro"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/yGyro"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -77,9 +79,9 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginLeft="182dp"
-        android:layout_marginStart="182dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="76dp"
         android:text="Gryoscope"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="parent" />
@@ -105,10 +107,11 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
+        android:layout_marginBottom="128dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
         android:text=":z:"
-        app:layout_constraintBaseline_toBaselineOf="@+id/zGyro"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/zGyro" />
 
     <TextView
@@ -128,15 +131,19 @@
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="25dp"
         android:layout_marginBottom="78dp"
         android:layout_marginEnd="94dp"
         android:layout_marginLeft="120dp"
         android:layout_marginRight="94dp"
         android:layout_marginStart="120dp"
+        android:layout_marginTop="8dp"
         android:text=":x:"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toStartOf="@+id/xGyro"
-        app:layout_constraintStart_toEndOf="@+id/xAcc" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/xAcc"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
