@@ -1,5 +1,7 @@
 package wave.test;
 
+import android.databinding.DataBindingComponent;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -9,8 +11,14 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.widget.TextView;
 
+import wave.test.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
+
+    ActivityMainBinding mainBinding;
+
+    private AccelerationVal Accelerationdb;
 
     private  TextView xAcc, yAcc, zAcc, xGyro, yGyro, zGyro;
     private Sensor Asensor;
@@ -23,7 +31,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        Accelerationdb = new AccelerationVal();
+
+        mainBinding.setAcc(Accelerationdb);
 
         AsensorM = (SensorManager) getSystemService(SENSOR_SERVICE);
 
@@ -34,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         xAcc = (TextView)findViewById(R.id.xAcc);
         yAcc = (TextView)findViewById(R.id.yAcc);
         zAcc = (TextView)findViewById(R.id.zAcc);
-
-
 
         //gyroscope, जाइरोस्कोप, гироскоп
         GsensorM = (SensorManager) getSystemService(SENSOR_SERVICE);
@@ -53,9 +63,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent event) {
         Sensor sensor = event.sensor;
         if (sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            xAcc.setText(""+ (double)Math.round(event.values[0] * 100d) / 100d);
-            yAcc.setText(""+ (double)Math.round(event.values[0] * 100d) / 100d);
-            zAcc.setText(""+ (double)Math.round(event.values[0] * 100d) / 100d);
+            Accelerationdb.xVal = (double)Math.round(event.values[0] * 100d) / 100d;
+            Accelerationdb.yVal = (double)Math.round(event.values[1] * 100d) / 100d;
+            Accelerationdb.zVal = (double)Math.round(event.values[2] * 100d) / 100d;
         }
         else if (sensor.getType() == Sensor.TYPE_GYROSCOPE) {
             xGyro.setText(""+ (double)Math.round(event.values[0] * 100d) / 100d);
