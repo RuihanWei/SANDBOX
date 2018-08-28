@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     ActivityMainBinding mainBinding;
 
-    private AccelerationVal Accelerationdb;
+    public AccelerationVal Accelerationdb;
 
     private  TextView xAcc, yAcc, zAcc, xGyro, yGyro, zGyro;
     private Sensor Asensor;
@@ -82,6 +82,5 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
     }
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-    }
+    public void onAccuracyChanged(Sensor sensor, int accuracy) { }
 }
